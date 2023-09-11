@@ -4,9 +4,11 @@ namespace App\Controllers;
 
 class PublicController {
     public function home() {
-        echo 'Home page';
+        $name = 'Sander';
+        $num = 10;
+        view('home', compact('name', 'num'));
     }
     public function about() {
-        echo 'About';
+        view('about');
     }
 }
