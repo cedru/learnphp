@@ -3,11 +3,12 @@
 namespace App\Controllers;
 
 use App\DB;
+use App\Models\User;
 
 class PublicController {
     public function home() {
         $db = new DB();
-        $result = $db->all();
+        $result = $db->all('users', User::class);
         var_dump($result);
         var_dump($result[0]->snippet());
         die();

@@ -19,11 +19,11 @@ class DB {
             }
     }
 
-    public function all() {
-        $stmt = $this->conn->prepare("SELECT * FROM articles");
+    public function all($table, $class) {
+        $stmt = $this->conn->prepare("SELECT * FROM $table");
         $stmt->execute();
 
-        $stmt->setFetchMode(PDO::FETCH_CLASS, Article::class);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
         return $stmt->fetchAll();
     }
 }
