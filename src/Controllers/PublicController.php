@@ -3,18 +3,12 @@
 namespace App\Controllers;
 
 use App\DB;
-use App\Models\User;
+use App\Models\Article;
 
 class PublicController {
     public function home() {
-        $db = new DB();
-        $result = $db->all('users', User::class);
-        var_dump($result);
-        var_dump($result[0]->snippet());
-        die();
-        $name = 'Sander';
-        $num = 10;
-        view('home', compact('name', 'num'));
+        $articles = Article::all();
+        view('home', compact('articles'));
     }
     public function about() {
         view('about');

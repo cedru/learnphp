@@ -12,7 +12,7 @@
         var age = parseInt(ageInput.value);
 
         if (age > 100) {
-            alert("too old nigga");
+            alert("too old");
             return false;
         }
 
